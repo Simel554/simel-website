@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~/albert simel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><span class="tilde">~$</span>&nbsp;cd&nbsp;~/albert</div>
+    <div class="navlinks">
+      <a href="#about">about/</a>
+      <a href="#work">work/</a>
+      <a href="#contact">contact/</a>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill"><span class="dot"></span>accepting projects</div>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>system: online · open to freelance &amp; contract work</div>
+
+    <h1 class="name"><span class="tilde">~/</span>albert simel</h1>
+
+    <p class="hero-desc">I build web platforms and Android apps that solve real problems for Kenyan communities — house-hunting, food redistribution, and coding education, shipped end to end.</p>
+
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#work">&gt;_ view my work</a>
+      <a class="btn btn-outline" href="#contact">get in touch</a>
+    </div>
+
+    <p class="hero-cmd">$ ./view --work<span class="cursor"></span></p>
+
+    <div class="term reveal">
+      <div class="term-head">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="path">albert@portfolio: ~</div>
+      </div>
+      <div class="term-body">
+        <div class="term-line"><span class="prompt">$ </span>whoami</div>
+        <div class="term-line term-out" id="typeLine1"></div>
+        <div class="term-line"><span class="prompt">$ </span>./status --check</div>
+        <div class="term-line term-status"><span class="dot"></span><span id="typeLine2"></span></div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">4</div><div class="label">independent projects</div></div>
+      <div class="stat"><div class="num">8+</div><div class="label">languages &amp; tools</div></div>
+      <div class="stat"><div class="num">nairobi, ke</div><div class="label">based in</div></div>
+      <div class="stat"><div class="num">yes</div><div class="label">open to work</div></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-label">## ABOUT</div>
+    <div class="about-cols">
+      <div class="panel reveal">
+        <div class="panel-head">albert@portfolio: ~/about.md</div>
+        <div class="panel-body">
+          <div class="cmd">$ cat about.md</div>
+          <p>i'm a developer based in nairobi, kenya, building web platforms and android apps that serve real local needs — from house-hunting and academic projects to coding education.</p>
+          <p>i've completed my diploma in information &amp; communication technology at regional centre training institute and am now awaiting graduation, after completing my education I joined the <a class="about-link" href="https://ke.usembassy.gov/education/am-spaces/">american spaces</a> where i am situated in the american corner moi as a volunteer..</p>
+          <div class="cmd" style="margin-top:14px;">$ exit 0</div>
+        </div>
+      </div>
+
+      <div class="panel reveal">
+        <div class="panel-head">albert@portfolio: ~/skills</div>
+        <div class="panel-body">
+          <div class="cmd">$ ls skills/</div>
+          <div class="skills-tags">
+            <span class="skill-tag">javascript</span>
+            <span class="skill-tag">node.js</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">sqlite</span>
+            <span class="skill-tag">python</span>
+            <span class="skill-tag">git/github</span>
+            <span class="skill-tag">ui engineering</span>
+            <span class="skill-tag">troubleshooting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-label">## WORK</div>
+    <div class="section-title-row">
+      <div class="section-title">selected projects</div>
+      <div class="section-meta">$ ls ~/work/ · 5 entries</div>
+    </div>
+
+    <div class="proj-grid">
+
+      <article class="proj-card reveal">
+        <div class="proj-title-row">
+          <div class="proj-title">./nyumbake</div>
+          <span class="proj-arrow">↗</span>
+        </div>
+        <p class="proj-desc">Nairobi house-hunting platform with dual seeker/landlord modes and KES-native pricing.</p>
+        <div class="proj-status"><span class="dot"></span>in-progress · solo dev</div>
+        <div class="proj-stack">javascript · node.js · mpesa daraja · git</div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-title-row">
+          <div class="proj-title">./devarena</div>
+          <span class="proj-arrow">↗</span>
+        </div>
+        <p class="proj-desc">Gamified, browser-based coding platform for kids and older learners — streaks, role-based auth (student/parent), and dark/light theming. Full working prototype.</p>
+        <div class="proj-status"><span class="dot"></span>prototype · full prototype</div>
+        <div class="proj-stack">node.js · express · sqlite · oauth</div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-title-row">
+          <div class="proj-title">./njiacode</div>
+          <span class="proj-arrow">↗</span>
+        </div>
+        <p class="proj-desc">Coding education app, being extended with free course-completion certificates for learners who finish lessons.</p>
+        <div class="proj-status"><span class="dot"></span>in-progress · solo dev</div>
+        <div class="proj-stack">javascript · education · certificates</div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-title-row">
+          <div class="proj-title">./farm-input</div>
+        </div>
+        <p class="proj-desc">Academic project: a farm input management application for tracking supplies and stock.</p>
+        <div class="proj-status academic"><span class="dot"></span>academic · academic project</div>
+        <div class="proj-stack">javascript · data management</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">## CONTACT</div>
+    <div class="contact-term panel reveal">
+      <div class="panel-head">albert@portfolio: ~</div>
+      <div class="panel-body">
+        <div class="cmd">$ mail --to albertsimel360@gmail.com</div>
+        <p>have a project or an idea? i'm open to freelance and contract work — tell me what you're building and i'll reply within 24 hours.</p>
+        <div class="contact-ctas">
+          <a class="btn btn-primary" href="https://wa.me/+254716034770" target="_blank" rel="noopener">Start a New Project</a>
+          <a class="btn btn-outline" href="https://github.com/simel554" target="_blank" rel="noopener">github ↗</a>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/simel554" target="_blank" rel="noopener">github.com/simel554</a>
+          <a href="https://linkedin.com/in/albertsimel" target="_blank" rel="noopener">linkedin.com/in/albertsimel</a>
+          <a href="https://x.com/albertsimel" target="_blank" rel="noopener">x.com/albertsimel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>$ © 2026 albert simel · nairobi, ke</div>
+    <div class="footer-links">
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
