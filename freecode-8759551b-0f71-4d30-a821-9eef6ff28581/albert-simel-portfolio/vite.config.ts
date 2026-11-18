@@ -1,0 +1,12 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  base: "./",
+  plugins: [react()],
+  server: {
+    allowedHosts: process.env.FREECODE_PREVIEW_HOST
+      ? [process.env.FREECODE_PREVIEW_HOST]
+      : [],
+  },
+});

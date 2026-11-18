@@ -1,0 +1,11 @@
+@import "@fontsource/syne/600.css";
+@import "@fontsource/syne/700.css";
+@import "@fontsource/syne/800.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "./styles/base.css";
+@import "./styles/chrome.css";
+@import "./styles/hero.css";
+@import "./styles/work.css";
+@import "./styles/about.css";
+@import "./styles/contact.css";
