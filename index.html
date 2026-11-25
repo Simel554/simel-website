@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0D0D0F" />
+    <title>~/albert simel — web &amp; software developer</title>
+    <meta
+      name="description"
+      content="Albert Simel builds web platforms and Android apps that solve real problems for Kenyan communities — house-hunting, food redistribution, and coding education, shipped end to end."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- custom cursor -->
+    <div class="cursor-layer" aria-hidden="true">
+      <div class="cursor-dot" id="cursorDot"></div>
+      <div class="cursor-pill" id="cursorPill"><span class="cursor-pill__label" id="cursorLabel"></span></div>
+    </div>
+
+    <div class="progress" id="progress" style="transform: scaleX(0)"></div>
+
+    <!-- nav -->
+    <header class="nav" id="nav">
+      <div class="shell nav__inner">
+        <a href="#top" class="brand" aria-label="Albert Simel, back to top">
+          <span class="brand__tilde">~$</span><span>cd ~/albert</span>
+        </a>
+        <nav class="nav__links" aria-label="Sections">
+          <a href="#about" class="nav__link"><span><i class="nav__index">01</i>about</span></a>
+          <a href="#work" class="nav__link"><span><i class="nav__index">02</i>work</span></a>
+          <a href="#contact" class="nav__link"><span><i class="nav__index">03</i>contact</span></a>
+        </nav>
+        <div class="nav__status">
+          <span class="time">NBO <b id="navClock">--:--:--</b></span>
+          <span class="status-pill"><span class="live-dot"></span>accepting projects</span>
+          <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- mobile sheet -->
+    <div class="sheet" id="sheet" hidden>
+      <div class="sheet__top">
+        <span class="brand"><span class="brand__tilde">~$</span><span>cd ~/albert</span></span>
+        <button class="sheet__close" id="sheetClose">close <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+      </div>
+      <div class="sheet__links">
+        <button data-goto="about"><em>01</em>about/</button>
+        <button data-goto="work"><em>02</em>work/</button>
+        <button data-goto="contact"><em>03</em>contact/</button>
+      </div>
+      <div class="sheet__foot">
+        <a href="mailto:albertsimel360@gmail.com">albertsimel360@gmail.com</a>
+        <a href="https://github.com/simel554" target="_blank" rel="noopener">github <svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <a href="https://linkedin.com/in/albertsimel" target="_blank" rel="noopener">linkedin <svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <span>nairobi, ke · <span id="sheetClock">--:--:--</span></span>
+      </div>
+    </div>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section id="top" class="hero">
+        <div class="shell hero__inner">
+          <div class="hero__meta">
+            <span class="eyebrow"><i class="tick">+/</i> Nairobi, Kenya — 1.2921° S / 36.8219° E</span>
+            <span class="status-pill">
+              <span class="live-dot"></span>
+              available for work · open to freelance &amp; contract work
+            </span>
+          </div>
+
+          <h1 class="hero__title" aria-label="Albert Simel">
+            <span class="masked hero__line"><span>albert</span></span>
+            <span class="masked hero__line"><span>simel<i class="hero__dot">.</i></span></span>
+          </h1>
+
+          <div class="hero__grid">
+            <div class="hero__lede" data-reveal>
+              <p class="hero__role"><span class="mono">[ web &amp; android developer ]</span></p>
+              <p class="hero__desc">
+                I build web platforms and Android apps that solve real problems for Kenyan
+                communities — house-hunting, food redistribution, and coding education, shipped end
+                to end.
+              </p>
+
+              <div class="hero__ctas">
+                <div class="magnetic">
+                  <a href="#work" class="btn btn--coral" data-cursor="VIEW WORK">
+                    <span>view my work</span>
+                    <span class="btn__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                  </a>
+                </div>
+                <div class="magnetic">
+                  <a href="mailto:albertsimel360@gmail.com" class="btn" data-cursor="SAY HI">
+                    <span>get in touch</span><span class="btn__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="hero__stats">
+                <div>
+                  <div class="hero__stat-v">4</div>
+                  <div class="hero__stat-l">independent projects</div>
+                </div>
+                <div>
+                  <div class="hero__stat-v">8+</div>
+                  <div class="hero__stat-l">languages &amp; tools</div>
+                </div>
+                <div>
+                  <div class="hero__stat-v">2026</div>
+                  <div class="hero__stat-l">latest ship</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero__stage" id="stage" data-cursor="TILT">
+              <div class="stage__frame" id="stageFrame">
+                <div class="tilt-card" id="tiltCard">
+                  <div class="tilt-card__glare" id="glare"></div>
+                  <div class="tilt-card__top">
+                    <span class="mono">~/albert — card.01</span><span class="mono">NBO</span>
+                  </div>
+                  <div class="tilt-card__mid">
+                    <span class="tilt-card__mark">as</span>
+                    <div class="tilt-card__rings" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <div class="tilt-card__bot">
+                    <p>builds that solve real local problems.</p>
+                    <div class="tilt-card__tags"><span>node</span><span>react</span><span>android</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="badge badge--a" data-drag data-cursor="DRAG"><span class="badge__dot"></span>ship end to end</div>
+              <div class="badge badge--b" data-drag data-cursor="DRAG"><span class="badge__dot"></span>android + web</div>
+              <div class="badge badge--c" data-drag data-cursor="DRAG"><span class="badge__dot"></span>mpesa native</div>
+
+              <span class="stage__axis stage__axis--v" aria-hidden="true"></span>
+              <span class="stage__axis stage__axis--h" aria-hidden="true"></span>
+              <span class="stage__note mono">FIG. 01 — drag the badges</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__ticker">
+          <div class="marquee" data-marquee data-speed="2.4" aria-hidden="true">
+            <div class="marquee__track">
+              <div class="marquee__half">
+                <span class="marquee__item">web platforms<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">android apps<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">node.js<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">ui engineering<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">sqlite<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">product thinking<i class="marquee__sep">*</i></span>
+                <span class="marquee__item">kenyan communities<i class="marquee__sep">*</i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#about" class="hero__scroll" data-cursor="SCROLL"><span>scroll</span><i></i></a>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section id="work" class="work">
+        <div class="shell">
+          <div class="work__head">
+            <div class="section-label">
+              <b>##</b> work <span class="mono">$ ls ~/work/ · 5 entries</span>
+            </div>
+            <h2 class="section-title work__title">
+              <span class="masked"><span>selected projects</span></span>
+            </h2>
+            <p class="work__intro">
+              Platforms built for Kenyan communities — house-hunting, food redistribution and
+              coding education. Open a row for the full case.
+            </p>
+          </div>
+
+          <div class="work__list" id="workList">
+            <div class="work__list-head mono">
+              <span>idx</span><span>project</span><span>role / tags</span><span>year</span>
+            </div>
+
+            <button class="row" type="button" data-project="nyumbake" data-cursor="VIEW CASE">
+              <span class="row__hairline" aria-hidden="true"></span>
+              <span class="row__idx mono">01</span>
+              <span class="row__main">
+                <span class="row__title">./nyumbake</span>
+                <span class="row__summary">Nairobi house-hunting platform with dual seeker/landlord modes and KES-native pricing.</span>
+              </span>
+              <span class="row__meta">
+                <span class="row__role">Solo dev · Product &amp; build</span>
+                <span class="row__tags"><i>marketplace</i><i>mpesa</i></span>
+              </span>
+              <span class="row__year mono">2026 <span class="row__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></span>
+            </button>
+
+            <button class="row" type="button" data-project="devarena" data-cursor="VIEW CASE">
+              <span class="row__hairline" aria-hidden="true"></span>
+              <span class="row__idx mono">02</span>
+              <span class="row__main">
+                <span class="row__title">./devarena</span>
+                <span class="row__summary">Gamified, browser-based coding platform for kids and older learners — streaks, role-based auth, dark/light theming.</span>
+              </span>
+              <span class="row__meta">
+                <span class="row__role">Solo dev · Full prototype</span>
+                <span class="row__tags"><i>education</i><i>gamified</i></span>
+              </span>
+              <span class="row__year mono">2026 <span class="row__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></span>
+            </button>
+
+            <button class="row" type="button" data-project="njiacode" data-cursor="VIEW CASE">
+              <span class="row__hairline" aria-hidden="true"></span>
+              <span class="row__idx mono">03</span>
+              <span class="row__main">
+                <span class="row__title">./njiacode</span>
+                <span class="row__summary">Coding education app, being extended with free course-completion certificates for learners who finish lessons.</span>
+              </span>
+              <span class="row__meta">
+                <span class="row__role">Solo dev · Education</span>
+                <span class="row__tags"><i>learning</i><i>certificates</i></span>
+              </span>
+              <span class="row__year mono">2026 <span class="row__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></span>
+            </button>
+
+            <button class="row" type="button" data-project="farm-input" data-cursor="VIEW CASE">
+              <span class="row__hairline" aria-hidden="true"></span>
+              <span class="row__idx mono">04</span>
+              <span class="row__main">
+                <span class="row__title">./farm-input</span>
+                <span class="row__summary">Academic project: a farm input management application for tracking supplies and stock.</span>
+              </span>
+              <span class="row__meta">
+                <span class="row__role">Academic project · Data</span>
+                <span class="row__tags"><i>supply</i><i>records</i></span>
+              </span>
+              <span class="row__year mono">2025 <span class="row__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></span>
+            </button>
+          </div>
+
+          <div class="work__foot mono">
+            <span>04 projects · 01 live portfolio</span>
+            <a href="#contact" data-cursor="SAY HI">start yours <svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+
+        <div class="preview" id="preview" aria-hidden="true">
+          <div class="preview__card preview__card--stone" id="previewCard">
+            <div class="preview__top mono"><span id="pvIndex">01 / 04</span><span id="pvYear">2026</span></div>
+            <div class="preview__mid">
+              <span class="preview__mark" id="pvMark">ny</span>
+              <span class="preview__grid" aria-hidden="true"></span>
+            </div>
+            <div class="preview__bot">
+              <strong id="pvTitle">Nyumbake</strong>
+              <span class="mono" id="pvStatus">in-progress</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- case drawer -->
+        <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+          <div class="drawer__scrim" data-close data-cursor="CLOSE"></div>
+          <div class="drawer__panel">
+            <div class="drawer__head">
+              <span class="mono" id="drawerKicker">case 01 / 04</span>
+              <button class="drawer__close" data-close data-cursor="CLOSE" aria-label="Close case study">
+                <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg> <span>close</span>
+              </button>
+            </div>
+            <div class="drawer__body">
+              <h3 class="drawer__title" id="drawerTitle">Nyumbake</h3>
+              <p class="drawer__role mono" id="drawerRole">Solo dev</p>
+              <div class="drawer__band" id="drawerBand"></div>
+              <p class="drawer__detail" id="drawerDetail"></p>
+
+              <div class="drawer__block">
+                <span class="drawer__label mono">stack</span>
+                <ul class="drawer__stack" id="drawerStack"></ul>
+              </div>
+
+              <div class="drawer__block">
+                <span class="drawer__label mono">links</span>
+                <a class="drawer__live" href="https://simel-coral.vercel.app/" target="_blank" rel="noopener" data-cursor="OPEN">
+                  <span>live demo — simel-coral</span><span><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                </a>
+                <a class="drawer__live drawer__live--ghost" href="https://github.com/simel554" target="_blank" rel="noopener" data-cursor="OPEN">
+                  <span>github.com/simel554</span><span><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                </a>
+              </div>
+
+              <div class="drawer__cta">
+                <p>want something like this?</p>
+                <a class="btn btn--coral" href="mailto:albertsimel360@gmail.com" data-cursor="SAY HI">
+                  <span>tell me about it</span><span class="btn__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="about">
+        <div class="shell">
+          <div class="about__head">
+            <div class="section-label"><b>##</b> about</div>
+            <h2 class="section-title about__title">
+              <span class="masked"><span>built in nairobi,</span></span>
+              <span class="masked"><span>shipped <i class="about__accent">everywhere</i>.</span></span>
+            </h2>
+          </div>
+
+          <div class="about__top">
+            <div class="about__bio">
+              <span class="cmd mono">$ cat about.md</span>
+              <p>
+                I'm a developer based in Nairobi, Kenya, building web platforms and Android apps
+                that serve real local needs — from house-hunting and academic projects to coding
+                education.
+              </p>
+              <p>
+                I've completed my diploma in Information &amp; Communication Technology at Regional
+                Centre Training Institute and am now awaiting graduation. After completing my
+                education I joined the
+                <a class="about__link" href="https://ke.usembassy.gov/education/am-spaces/" target="_blank" rel="noopener" data-cursor="OPEN">American Spaces</a>
+                where I am situated in the American Corner Moi University as a volunteer.
+              </p>
+              <span class="cmd mono about__exit">$ exit 0</span>
+            </div>
+
+            <div class="bento">
+              <div class="bento__cell" data-reveal>
+                <span class="bento__num">4</span><span class="bento__label">independent projects</span><span class="bento__idx mono">01</span>
+              </div>
+              <div class="bento__cell" data-reveal>
+                <span class="bento__num">8+</span><span class="bento__label">languages &amp; tools</span><span class="bento__idx mono">02</span>
+              </div>
+              <div class="bento__cell" data-reveal>
+                <span class="bento__num">nairobi, ke</span><span class="bento__label">based in</span><span class="bento__idx mono">03</span>
+              </div>
+              <div class="bento__cell" data-reveal>
+                <span class="bento__num">yes</span><span class="bento__label">open to work</span><span class="bento__idx mono">04</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__marquee">
+            <div class="marquee" data-marquee data-speed="-1.8" aria-hidden="true">
+              <div class="marquee__track">
+                <div class="marquee__half">
+                  <span class="marquee__item">javascript<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">node.js<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">HTML/CSS<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">sqlite<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">python<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">git/github<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">ui engineering<i class="marquee__sep">*</i></span>
+                  <span class="marquee__item">troubleshooting<i class="marquee__sep">*</i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="caps">
+            <div class="caps__head">
+              <h3 class="caps__title">capabilities</h3>
+              <span class="mono">$ ls skills/ — 8 entries</span>
+            </div>
+
+            <div class="caps__list" id="capsList">
+              <div class="cap is-open" data-cap>
+                <button class="cap__trigger" aria-expanded="true" data-cursor="CLOSE">
+                  <span class="cap__idx mono">01</span>
+                  <span class="cap__name">Product engineering<i class="cap__kicker">idea → shipped platform</i></span>
+                  <span class="cap__icon">−</span>
+                </button>
+                <div class="cap__panel">
+                  <div class="cap__inner">
+                    <p>
+                      End-to-end builds where the product decisions and the code live in the same
+                      head. I map the flow, model the data, then build the thing that gets used.
+                    </p>
+                    <ul>
+                      <li class="mono">dual-role flows</li>
+                      <li class="mono">KES-native payments</li>
+                      <li class="mono">offline-first thinking</li>
+                      <li class="mono">auth &amp; permissions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cap" data-cap>
+                <button class="cap__trigger" aria-expanded="false" data-cursor="OPEN">
+                  <span class="cap__idx mono">02</span>
+                  <span class="cap__name">UI engineering<i class="cap__kicker">interfaces with weight</i></span>
+                  <span class="cap__icon">+</span>
+                </button>
+                <div class="cap__panel">
+                  <div class="cap__inner">
+                    <p>
+                      Interfaces built for real devices on real networks in Nairobi — fast, legible,
+                      and tactile. Layout systems, state, motion, and accessibility handled as one craft.
+                    </p>
+                    <ul>
+                      <li class="mono">responsive layout</li>
+                      <li class="mono">design systems</li>
+                      <li class="mono">motion &amp; interaction</li>
+                      <li class="mono">performance budgets</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cap" data-cap>
+                <button class="cap__trigger" aria-expanded="false" data-cursor="OPEN">
+                  <span class="cap__idx mono">03</span>
+                  <span class="cap__name">Android &amp; web apps<i class="cap__kicker">two surfaces, one product</i></span>
+                  <span class="cap__icon">+</span>
+                </button>
+                <div class="cap__panel">
+                  <div class="cap__inner">
+                    <p>
+                      Web platforms and Android builds that share a data model, so a listing or a
+                      lesson looks the same wherever a learner or landlord opens it.
+                    </p>
+                    <ul>
+                      <li class="mono">mobile-friendly APIs</li>
+                      <li class="mono">app store readiness</li>
+                      <li class="mono">localisation</li>
+                      <li class="mono">low-bandwidth use</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cap" data-cap>
+                <button class="cap__trigger" aria-expanded="false" data-cursor="OPEN">
+                  <span class="cap__idx mono">04</span>
+                  <span class="cap__name">Education &amp; community<i class="cap__kicker">teaching what I build</i></span>
+                  <span class="cap__icon">+</span>
+                </button>
+                <div class="cap__panel">
+                  <div class="cap__inner">
+                    <p>
+                      Volunteer at the American Corner Moi as part of the American Spaces programme,
+                      and build learning tools like DevArena and NjiaCode for the next wave of Kenyan
+                      developers.
+                    </p>
+                    <ul>
+                      <li class="mono">coding education</li>
+                      <li class="mono">certificates</li>
+                      <li class="mono">mentoring</li>
+                      <li class="mono">american spaces</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__resume">
+            <a href="https://linkedin.com/in/albertsimel" target="_blank" rel="noopener" data-cursor="OPEN" class="about__resume-link">
+              <span>full experience on linkedin</span><span><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="contact">
+        <div class="shell">
+          <div class="section-label"><b>##</b> contact</div>
+
+          <h2 class="contact__headline">
+            <span class="masked"><span>got something</span></span>
+            <span class="masked"><span>worth <i>building</i>?</span></span>
+          </h2>
+
+          <div class="contact__grid">
+            <div class="contact__left">
+              <p class="contact__pitch">
+                Have a project or an idea? I'm open to freelance and contract work — tell me what
+                you're building and I'll reply within 24 hours.
+              </p>
+
+              <div class="contact__actions">
+                <div class="magnetic">
+                  <a href="https://wa.me/+254716034770" target="_blank" rel="noopener" class="btn btn--coral" data-cursor="SAY HI">
+                    <span>start a new project</span><span class="btn__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                  </a>
+                </div>
+
+                <button class="copy-pill" id="copyBtn" data-cursor="COPY" aria-label="Copy email address">
+                  <span class="copy-pill__text">albertsimel360@gmail.com</span>
+                  <span class="copy-pill__icon" id="copyIcon"><svg class="ic-copy" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
+                </button>
+              </div>
+
+              <div class="contact__meta mono">
+                <span>Nairobi, KE — 1.2921° S / 36.8219° E</span>
+                <span>reply window &lt; 24h</span>
+              </div>
+            </div>
+
+            <div class="contact__right">
+              <span class="contact__label mono">elsewhere</span>
+              <ul class="socials">
+                <li>
+                  <div class="magnetic">
+                    <a href="https://github.com/simel554" target="_blank" rel="noopener" class="social" data-cursor="OPEN">
+                      <span class="social__label">github</span>
+                      <span class="social__handle mono">github.com/simel554</span>
+                      <span class="social__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="magnetic">
+                    <a href="https://linkedin.com/in/albertsimel" target="_blank" rel="noopener" class="social" data-cursor="OPEN">
+                      <span class="social__label">linkedin</span>
+                      <span class="social__handle mono">linkedin.com/in/albertsimel</span>
+                      <span class="social__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="magnetic">
+                    <a href="https://x.com/albertsimel" target="_blank" rel="noopener" class="social" data-cursor="OPEN">
+                      <span class="social__label">x / twitter</span>
+                      <span class="social__handle mono">x.com/albertsimel</span>
+                      <span class="social__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="magnetic">
+                    <a href="https://wa.me/+254716034770" target="_blank" rel="noopener" class="social" data-cursor="OPEN">
+                      <span class="social__label">whatsapp</span>
+                      <span class="social__handle mono">+254 716 034 770</span>
+                      <span class="social__arrow"><svg class="ic-arrow" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__wordmark" aria-hidden="true"><span>albert simel</span></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer__row">
+        <span class="mono">$ © 2026 albert simel · nairobi, ke</span>
+        <nav class="footer__links mono" aria-label="Footer">
+          <a href="#about">about</a>
+          <a href="#work">work</a>
+          <a href="#contact">contact</a>
+          <a href="#top" data-cursor="TOP">back to top ↑</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" hidden role="status" aria-live="polite">
+      <span class="toast__dot"></span>
+      copied to clipboard
+      <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>
+      <span class="toast__mail mono">albertsimel360@gmail.com</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
